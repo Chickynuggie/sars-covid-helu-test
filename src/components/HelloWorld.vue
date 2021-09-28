@@ -1,5 +1,5 @@
 <template>
-
+  <h1>The dark crystal</h1>
 </template>
 
 <script>
