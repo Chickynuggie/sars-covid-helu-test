@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+.danger {
+  color: tomato;
+}
+
+.caution {
+  color: darkorange;
+}
+
+.pass {
+  color: green;
+}
