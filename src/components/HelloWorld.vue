@@ -1,12 +1,20 @@
 <template>
-  <h1>The dark crystal</h1>
+  <h1>{{ this.$store.getters.getGlobalCovidData }}</h1>
+  <h2>{{ this.$store.getters.getCountriesCovidData }}</h2>
 </template>
 
 <script>
+import { useStore } from 'vuex';
+import { onMounted } from 'vue';
+
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  setup() {
+    const store = useStore();
+
+    onMounted(() => {
+      store.dispatch('fetchOverallCovidData');
+    })
   }
 }
 </script>

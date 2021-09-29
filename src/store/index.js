@@ -1,12 +1,16 @@
 import { createStore } from "vuex";
 import mutations from "./mutations";
 import actions from "./actions";
+import getters from "./getters";
 
 const store = new createStore({
-  state: {},
+  state: {
+    globalCovidData: [],
+    countriesCovidData: []
+  },
   mutations,
   actions,
-  getters: {}
+  getters
 });
 
 export default store;
