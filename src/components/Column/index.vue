@@ -3,7 +3,7 @@
     <div class="table-cell-header">
       <h2>{{ headerTitle }}</h2>
     </div>
-    <Cell v-for="dataBit in displayData" :key="dataBit" :display-data="dataBit"  />
+    <Cell v-for="dataBit in displayData" :key="dataBit" :display-data="dataBit" :class="customClass" />
   </div>
 
 </template>
@@ -13,7 +13,7 @@ import Cell from '../Cell';
 
 export default {
   name: 'Column',
-  props: ['headerTitle', 'displayData'],
+  props: ['headerTitle', 'displayData', 'customClass'],
   components: {
       Cell
   }

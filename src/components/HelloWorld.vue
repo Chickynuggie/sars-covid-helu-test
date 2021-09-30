@@ -1,10 +1,9 @@
 <template>
   <h1>{{ this.$store.getters.getGlobalCovidData }}</h1>
-  <!-- <Cell v-for="country in this.$store.getters.getCountriesCovidData" v-bind:key="country.Country" v-bind:country-data="country"  /> -->
   <Column header-title="Country Names" :display-data="this.$store.getters.getCountryNames" />
-  <Column header-title="Total Cases" :display-data="this.$store.getters.getCountryTotalDeaths" />
-  <Column header-title="Total Recoveries" :display-data="this.$store.getters.getCountryTotalRecovered" />
-  <Column header-title="Total Deaths" :display-data="this.$store.getters.getCountryTotalDeaths" />
+  <Column header-title="Total Cases" :display-data="this.$store.getters.getCountryTotalDeaths" custom-class="warning"/>
+  <Column header-title="Total Recoveries" :display-data="this.$store.getters.getCountryTotalRecovered" custom-class="pass"/>
+  <Column header-title="Total Deaths" :display-data="this.$store.getters.getCountryTotalDeaths" custom-class="danger" />
 </template>
 
 <script>

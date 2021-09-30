@@ -6,7 +6,8 @@ import getters from "./getters";
 const store = new createStore({
   state: {
     globalCovidData: [],
-    countriesCovidData: []
+    countriesCovidData: [],
+    countryNames: []
   },
   mutations,
   actions,

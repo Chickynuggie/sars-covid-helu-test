@@ -2,14 +2,19 @@
   box-sizing: border-box;
 }
 
+body {
+  padding: 115px 10px 0;
+  margin: 0;
+}
+
 .danger {
   color: tomato;
 }
 
-.caution {
+.warning {
   color: darkorange;
 }
 
 .pass {
-  color: green;
+  color: lightgreen;
 }
