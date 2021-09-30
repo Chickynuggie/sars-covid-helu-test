@@ -1,0 +1,40 @@
+<template>
+  <n-auto-complete
+    :options="options"
+    v-model:value="value"
+    placeholder="Start typing country name"
+  />
+</template>
+
+<script>
+import { ref, computed } from "vue";
+import { useStore } from "vuex";
+
+export default {
+  name: "CountryInput",
+  setup() {
+    const valueRef = ref("");
+    const store = useStore();
+    const options = computed(() =>
+      store.getters.getCountryNames.filter(
+        (item) =>
+          item.toLowerCase().search(valueRef.value?.toLowerCase()) !== -1
+      )
+    );
+
+    return {
+      value: valueRef,
+      options,
+    };
+  },
+};
+</script>
+
+<style scoped>
+h4 {
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid black;
+  margin: 0;
+}
+</style>

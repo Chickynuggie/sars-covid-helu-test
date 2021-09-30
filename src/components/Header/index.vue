@@ -2,16 +2,17 @@
   <div class="header">
       <img src="../../assets/virus.svg">
       <h1>SARS-CoV2 chart</h1>
+      <CountryInput />
   </div>
 </template>
 
 <script>
-import logo from '../../assets/virus.svg';
+import CountryInput from './CountryInput';
 
 export default {
   name: 'Header',
-  setup() {
-      return logo;
+  components: {
+      CountryInput
   }
 }
 </script>
@@ -28,7 +29,9 @@ export default {
     width: 100vw;
     border-bottom: 5px solid #2c3e50;
     height: 115px;
-    background: lightgrey;
+    background: url('../../assets/background.jpg');
+    background-size: cover;
+    color: white;
 }
 
 img {
