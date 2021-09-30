@@ -7,7 +7,8 @@ const store = new createStore({
   state: {
     globalCovidData: [],
     countriesCovidData: [],
-    countryNames: []
+    countryNames: [],
+    filterByCountry: null
   },
   mutations,
   actions,

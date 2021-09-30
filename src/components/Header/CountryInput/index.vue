@@ -2,6 +2,7 @@
   <n-auto-complete
     :options="options"
     v-model:value="value"
+    :on-select="handleChange"
     placeholder="Start typing country name"
   />
 </template>
@@ -22,9 +23,15 @@ export default {
       )
     );
 
+    const handleChange = () => {
+      store.dispatch('setCountryFilter', valueRef.value);
+      console.log(store.state.filterByCountry)
+    }
+
     return {
       value: valueRef,
       options,
+      handleChange
     };
   },
 };

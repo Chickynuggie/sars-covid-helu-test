@@ -17,6 +17,9 @@ const actions = {
       commit("setCountriesCovidData", results?.data?.Countries);
     });
   },
+  setCountryFilter({ commit }, payload) {
+    commit('setCountryFilter', payload);
+  }
 };
 
 export default actions;

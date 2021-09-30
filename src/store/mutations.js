@@ -4,6 +4,12 @@ const mutations = {
     },
     setCountriesCovidData(state, data) {
         state.countriesCovidData = data;
+    },
+    setCountryFilter(state, data) {
+        state.filterByCountry = data;
+    },
+    clearCountryFilter(state) {
+        state.filterByCountry = null;
     }
 };
 
