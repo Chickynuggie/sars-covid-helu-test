@@ -23,14 +23,8 @@ export default {
     align-items: center;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100vw;
-    border-bottom: 5px solid #2c3e50;
     height: 115px;
-    background: url('../../assets/background.jpg');
-    background-size: cover;
     color: white;
 }
 

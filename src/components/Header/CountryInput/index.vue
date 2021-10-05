@@ -25,7 +25,6 @@ export default {
 
     const handleChange = () => {
       store.dispatch('setCountryFilter', valueRef.value);
-      console.log(store.state.filterByCountry)
     }
 
     return {
@@ -43,5 +42,12 @@ h4 {
   border-radius: 3px;
   border: 1px solid black;
   margin: 0;
+}
+
+.n-auto-complete {
+  max-width: 20rem;
+  margin-left: 10rem;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 </style>

@@ -31,4 +31,8 @@ export default {
   border: 1px solid black;
   background-color: darkgrey;
 }
+
+h2 {
+  margin: 0;
+}
 </style>
