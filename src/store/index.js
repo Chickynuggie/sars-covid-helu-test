@@ -8,7 +8,8 @@ const store = new createStore({
     globalCovidData: [],
     countriesCovidData: [],
     countryNames: [],
-    filterByCountry: null
+    filterByCountry: null,
+    isSpinning: false
   },
   mutations,
   actions,

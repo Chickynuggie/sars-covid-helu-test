@@ -1,4 +1,5 @@
 import axios from "axios";
+import store from '../store';
 
 export const fetchOverallCovidData = () => {
     return axios.get('https://api.covid19api.com/summary');
@@ -8,22 +9,25 @@ export const fetchCountries = () => {
     return axios.get('https://api.covid19api.com/countries');
 }
 
-axios.interceptors.request.use(function (config) {
-    alert('kaka van!');
+axios.interceptors.request.use(
+  function(config) {
+      console.log('kaka van');
+    store.commit("startSpinning");
     return config;
-  }, function (error) {
-    // Do something with request error
+  },
+  function(error) {
+    store.commit("stopSpinning");
     return Promise.reject(error);
-  });
+  }
+);
 
-// Add a response interceptor
-axios.interceptors.response.use(function (response) {
-    // Any status code that lie within the range of 2xx cause this function to trigger
-    // Do something with response data
+axios.interceptors.response.use(
+  function(response) {
+    store.commit("stopSpinning");
     return response;
-  }, function (error) {
-    // Any status codes that falls outside the range of 2xx cause this function to trigger
-    // Do something with response error
+  },
+  function(error) {
+    store.commit("stopSpinning");
     return Promise.reject(error);
-  });
-
+  }
+);

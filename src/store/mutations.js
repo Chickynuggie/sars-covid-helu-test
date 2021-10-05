@@ -10,6 +10,12 @@ const mutations = {
     },
     clearCountryFilter(state) {
         state.filterByCountry = null;
+    },
+    startSpinning(state) {
+        state.isSpinning = true;
+    },
+    stopSpinning(state) {
+        state.isSpinning = false;
     }
 };
 

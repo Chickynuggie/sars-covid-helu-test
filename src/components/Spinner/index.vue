@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import { axios } from "axios";
-import { onMounted, computed } from "vue";
+import { computed } from "vue";
+import { useStore } from 'vuex';
 
 export default {
   name: "Spinner",
@@ -16,30 +16,6 @@ export default {
   setup() {
     const store = useStore();
     const isSpinning = computed(() => store.getters.isSpinning);
-
-    onMounted(() => {
-      axios.interceptors.request.use(
-        function(config) {
-          store.dispatch("startSpinner");
-          return config;
-        },
-        function(error) {
-          store.dispatch("stopSpinner");
-          return Promise.reject(error);
-        }
-      );
-
-      axios.interceptors.response.use(
-        function(response) {
-          store.dispatch("stopSpinner");
-          return response;
-        },
-        function(error) {
-         store.dispatch("stopSpinner");
-          return Promise.reject(error);
-        }
-      );
-    });
 
     return {
       isSpinning

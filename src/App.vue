@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Spinner />
     <Header />
     <Table />
     <Footer />
@@ -10,13 +11,15 @@
 import Table from './components/Table'
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Spinner from './components/Spinner';
 
 export default {
   name: 'App',
   components: {
     Table,
     Header,
-    Footer
+    Footer,
+    Spinner
   }
 }
 </script>

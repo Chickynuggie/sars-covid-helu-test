@@ -4,7 +4,8 @@ const getters = {
     getCountryNames: state => state.countriesCovidData.map((country) => country.Country),
     getCountryTotalDeaths: state => state.countriesCovidData.map((country) => country.TotalDeaths),
     getCountryTotalCases: state => state.countriesCovidData.map((country) => country.TotalConfirmed),
-    getCountryTotalRecovered: state => state.countriesCovidData.map((country) => country.TotalRecovered)
+    getCountryTotalRecovered: state => state.countriesCovidData.map((country) => country.TotalRecovered),
+    isSpinning: state => state.isSpinning
 };
 
 export default getters;
