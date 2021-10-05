@@ -10,10 +10,10 @@
 <script>
 import { useStore } from 'vuex';
 import { onMounted } from 'vue';
-import Column from './Table/Column';
+import Column from './Column';
 
 export default {
-  name: 'HelloWorld',
+  name: 'Table',
   components: {
     Column
   },
