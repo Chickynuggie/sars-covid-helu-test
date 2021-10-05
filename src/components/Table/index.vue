@@ -35,5 +35,7 @@ export default {
   width: 50vw;
   margin: 0 auto;
   display: flex;
+  -webkit-box-shadow: 5px 5px 15px -1px #000000;
+  box-shadow: 5px 5px 15px -1px #000000;
 }
 </style>
