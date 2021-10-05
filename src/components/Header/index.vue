@@ -22,8 +22,8 @@ export default {
     display: flex;
     align-items: center;
     padding-bottom: 10px;
-    margin-bottom: 10px;
-    width: 100vw;
+    width: 50vw;
+    margin: 0 auto 10vh;
     height: 115px;
     color: white;
 }

@@ -1,9 +1,8 @@
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
 body {
-  padding: 10px;
   margin: 0;
   background: url('../assets/the-town-bg-01.jpg');
   background-repeat: no-repeat;
@@ -15,11 +14,11 @@ body {
 }
 
 .danger {
-  color: tomato;
+  color: red;
 }
 
 .warning {
-  color: darkorange;
+  color: yellow;
 }
 
 .pass {

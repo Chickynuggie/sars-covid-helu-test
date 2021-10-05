@@ -20,16 +20,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .table-cell-wrapper {
-  display: inline-block;
+  width: 25%;
 }
 
 .table-cell-header {
-  padding: 15px;
+  padding: 10px;
   border-radius: 3px;
   border: 1px solid black;
-  background-color: darkgrey;
+  font-size: 0.6vw;
+  background-color: rgba(0, 0, 0, 0.45);
 }
 
 h2 {

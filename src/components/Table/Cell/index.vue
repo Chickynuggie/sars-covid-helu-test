@@ -12,9 +12,10 @@ export default {
 
 <style scoped>
 h4 {
-  padding: 15px;
+  padding: 10px;
   border-radius: 3px;
-  border: 1px solid black;
-  margin: 0;  
+  border: 1px solid rgba(0, 0, 0, 0.55);
+  background-color: rgba(0, 0, 0, 0.25);
+  margin: 0;
 }
 </style>

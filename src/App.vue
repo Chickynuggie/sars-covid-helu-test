@@ -2,18 +2,21 @@
   <div>
     <Header />
     <HelloWorld />
+    <Footer />
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    Header
+    Header,
+    Footer
   }
 }
 </script>
@@ -22,7 +25,6 @@ export default {
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: white;
 }
 </style>
