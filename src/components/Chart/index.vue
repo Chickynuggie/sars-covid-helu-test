@@ -39,13 +39,13 @@ export default defineComponent({
   setup() {
     const store = useStore();
     const currentView = computed(() => store.getters.getCurrentView);
-    const countries = store.getters.getCountryNames;
-    const cases = store.getters.getCountriesCovidData.map(
+    const countries = computed(() => store.getters.getCountryNames);
+    const cases = computed(() => store.getters.getCountriesCovidData.map(
       (country) => country.TotalConfirmed
-    );
-    const deaths = store.getters.getCountriesCovidData.map(
+    ));
+    const deaths = computed(() => store.getters.getCountriesCovidData.map(
       (country) => country.TotalDeaths
-    );
+    ));
     const option = ref({
       tooltip: {
         trigger: "axis",

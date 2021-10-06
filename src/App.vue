@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Construction />
     <Spinner />
     <Header />
     <Chart />
@@ -16,6 +17,7 @@ import Footer from './components/Footer';
 import Spinner from './components/Spinner';
 import Duck from './components/Duck';
 import Chart from './components/Chart';
+import Construction from './components/Construction';
 
 export default {
   name: 'App',
@@ -25,7 +27,8 @@ export default {
     Footer,
     Spinner,
     Duck,
-    Chart
+    Chart,
+    Construction
   }
 }
 </script>
