@@ -2,6 +2,7 @@
   <div>
     <Spinner />
     <Header />
+    <Chart />
     <Table />
     <Footer />
     <Duck />
@@ -14,6 +15,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Spinner from './components/Spinner';
 import Duck from './components/Duck';
+import Chart from './components/Chart';
 
 export default {
   name: 'App',
@@ -22,7 +24,8 @@ export default {
     Header,
     Footer,
     Spinner,
-    Duck
+    Duck,
+    Chart
   }
 }
 </script>
