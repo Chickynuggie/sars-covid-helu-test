@@ -1,10 +1,14 @@
 <template>
-  <n-auto-complete
-    :options="options"
-    v-model:value="value"
-    :on-select="handleChange"
-    placeholder="Start typing country name"
-  />
+  <div class="country-input-wrapper">
+    <n-auto-complete
+      :options="options"
+      v-model:value="selectedCountry"
+      :blur-after-select="true"
+      :on-blur="handleChange"
+      placeholder="Start typing country name"
+    />
+    <i class="bi bi-x-circle country-input-clear" @click="clearCountryFilter"></i>
+  </div>
 </template>
 
 <script>
@@ -14,23 +18,32 @@ import { useStore } from "vuex";
 export default {
   name: "CountryInput",
   setup() {
-    const valueRef = ref("");
+    const selectedCountry = ref("");
     const store = useStore();
     const options = computed(() =>
       store.getters.getCountryNames?.filter(
-        (item) =>
-          item.toLowerCase().search(valueRef.value?.toLowerCase()) !== -1
+        (item) => item.toLowerCase().search(selectedCountry.value?.toLowerCase()) !== -1
       )
     );
 
-    const handleChange = () => {
-      store.dispatch('setCountryFilter', valueRef.value);
+    const clearCountryFilter = () => {
+      if(selectedCountry.value) {
+        selectedCountry.value = "";
+      }
+
+      store.commit("clearCountryFilter");
     }
 
+    const handleChange = () =>
+      selectedCountry.value
+        ? store.commit("setCountryFilter", selectedCountry.value)
+        : clearCountryFilter();
+
     return {
-      value: valueRef,
+      selectedCountry,
       options,
-      handleChange
+      handleChange,
+      clearCountryFilter
     };
   },
 };
@@ -46,10 +59,26 @@ h4 {
 
 .n-auto-complete {
   max-width: 20rem;
-  margin-left: 10rem;
   border: 2px solid black;
   border-radius: 5px;
-   -webkit-box-shadow: 5px 5px 15px -1px #000000;
+  -webkit-box-shadow: 5px 5px 15px -1px #000000;
   box-shadow: 5px 5px 15px -1px #000000;
+}
+
+.country-input-wrapper {
+  width: 25rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.country-input-clear {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: color 0.1s ease-in-out;
+}
+
+.country-input-clear:hover {
+  color: rgba(160, 157, 157, 0.3);
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="header">
       <img src="../../assets/virus.svg">
-      <h1>SARS-CoV2 chart</h1>
+      <span>SARS-CoV2 chart</span>
       <CountryInput />
   </div>
 </template>
@@ -34,7 +34,7 @@ img {
     margin: 0 20px;
 }
 
-h1 {
+span {
     font-size: 30px;
 }
 </style>
