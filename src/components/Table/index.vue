@@ -1,16 +1,18 @@
 <template>
-  <CountryInput />
-  <div class="covid-table">
-    <table v-if="countriesData">
-      <tr>
-        <th v-for="header in tableHeaders" :key="header">{{ header }}</th>
-      </tr>
-      <tr v-for="countryData in countriesData" :key="countryData.CountryName">
-        <td v-for="key in tableHeaders" :key="countryData.CountryName + key">
-          {{ countryData ? countryData[key] : null}}
-        </td>
-      </tr>
-    </table>
+  <div v-if="currentView === 'table'">
+    <CountryInput />
+    <div class="covid-table">
+      <table v-if="countriesData">
+        <tr>
+          <th v-for="header in tableHeaders" :key="header">{{ header }}</th>
+        </tr>
+        <tr v-for="countryData in countriesData" :key="countryData.CountryName">
+          <td v-for="key in tableHeaders" :key="countryData.CountryName + key">
+            {{ countryData ? countryData[key] : null}}
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -30,6 +32,7 @@ export default {
     const store = useStore();
     const tableHeaders = constants.tableHeaders;
     const countriesData = computed(() => store.getters.getCountriesCovidData);
+    const currentView = computed(() => store.getters.getCurrentView)
     let key, countryData;
 
     onMounted(() => {
@@ -39,6 +42,7 @@ export default {
     return {
       tableHeaders,
       countriesData,
+      currentView,
       key,
       countryData
     }
