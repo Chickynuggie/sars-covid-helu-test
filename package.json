@@ -1,6 +1,7 @@
 {
   "name": "helu-covid-test",
   "version": "0.1.0",
+  "author": "Daniel Farkas",
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve",

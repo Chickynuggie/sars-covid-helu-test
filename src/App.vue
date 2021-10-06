@@ -4,6 +4,7 @@
     <Header />
     <Table />
     <Footer />
+    <Duck />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Table from './components/Table'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Spinner from './components/Spinner';
+import Duck from './components/Duck';
 
 export default {
   name: 'App',
@@ -19,7 +21,8 @@ export default {
     Table,
     Header,
     Footer,
-    Spinner
+    Spinner,
+    Duck
   }
 }
 </script>
