@@ -6,10 +6,10 @@ const mutations = {
         state.countriesCovidData = data;
     },
     setCountryFilter(state, data) {
-        state.filterByCountry = data;
+        state.countryFilter = data;
     },
     clearCountryFilter(state) {
-        state.filterByCountry = null;
+        state.countryFilter = null;
     },
     startSpinning(state) {
         state.isSpinning = true;

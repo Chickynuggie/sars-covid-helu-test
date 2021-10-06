@@ -1,10 +1,7 @@
 const getters = {
     getGlobalCovidData: state => state.globalCovidData,
-    getCountriesCovidData: state => state.countriesCovidData,
+    getCountriesCovidData: state => state.countryFilter ? state.countriesCovidData.filter((country) => country.Country === state.countryFilter) : state.countriesCovidData,
     getCountryNames: state => state.countriesCovidData.map((country) => country.Country),
-    getCountryTotalDeaths: state => state.countriesCovidData.map((country) => country.TotalDeaths),
-    getCountryTotalCases: state => state.countriesCovidData.map((country) => country.TotalConfirmed),
-    getCountryTotalRecovered: state => state.countriesCovidData.map((country) => country.TotalRecovered),
     isSpinning: state => state.isSpinning
 };
 

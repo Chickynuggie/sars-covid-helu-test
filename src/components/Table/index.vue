@@ -1,28 +1,42 @@
 <template>
   <div class="covid-table">
-    <Column header-title="Country Names" :display-data="this.$store.getters.getCountryNames" />
-    <Column header-title="Total Cases" :display-data="this.$store.getters.getCountryTotalDeaths" custom-class="warning"/>
-    <Column header-title="Total Recoveries" :display-data="this.$store.getters.getCountryTotalRecovered" custom-class="pass"/>
-    <Column header-title="Total Deaths" :display-data="this.$store.getters.getCountryTotalDeaths" custom-class="danger" />
+    <table v-if="countriesData">
+      <tr>
+        <th v-for="header in tableHeaders" :key="header">{{ header }}</th>
+      </tr>
+      <tr v-for="countryData in countriesData" :key="countryData.CountryName">
+        <td v-for="key in tableHeaders" :key="countryData.CountryName + key">
+          {{ countryData ? countryData[key] : null}}
+        </td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
 import { useStore } from 'vuex';
-import { onMounted } from 'vue';
-import Column from './Column';
+import { onMounted, computed } from 'vue';
+import constants from '../../constants';
 
 export default {
   name: 'Table',
-  components: {
-    Column
-  },
+  props: ['header'],
   setup() {
     const store = useStore();
+    const tableHeaders = constants.tableHeaders;
+    const countriesData = computed(() => store.getters.getCountriesCovidData);
+    let key, countryData;
 
     onMounted(() => {
       store.dispatch('fetchOverallCovidData');
     })
+
+    return {
+      tableHeaders,
+      countriesData,
+      key,
+      countryData
+    }
   }
 }
 </script>
@@ -34,8 +48,30 @@ export default {
   overflow-y: scroll;
   width: 50vw;
   margin: 0 auto;
-  display: flex;
   -webkit-box-shadow: 5px 5px 15px -1px #000000;
   box-shadow: 5px 5px 15px -1px #000000;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+  width: 25%;
+  min-width: 25%;
+  padding: 5px 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+th {
+  font-size: 1vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px 5px;
+}
+
+tr:nth-of-type(even) {
+  background-color: rgba(194, 189, 189, 0.1);
+}
+
+table {
+  width: 49vw;
+  overflow: hidden;
 }
 </style>

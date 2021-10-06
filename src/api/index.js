@@ -11,7 +11,6 @@ export const fetchCountries = () => {
 
 axios.interceptors.request.use(
   function(config) {
-      console.log('kaka van');
     store.commit("startSpinning");
     return config;
   },

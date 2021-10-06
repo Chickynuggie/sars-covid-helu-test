@@ -17,7 +17,7 @@ export default {
     const valueRef = ref("");
     const store = useStore();
     const options = computed(() =>
-      store.getters.getCountryNames.filter(
+      store.getters.getCountryNames?.filter(
         (item) =>
           item.toLowerCase().search(valueRef.value?.toLowerCase()) !== -1
       )
@@ -49,5 +49,7 @@ h4 {
   margin-left: 10rem;
   border: 2px solid black;
   border-radius: 5px;
+   -webkit-box-shadow: 5px 5px 15px -1px #000000;
+  box-shadow: 5px 5px 15px -1px #000000;
 }
 </style>
