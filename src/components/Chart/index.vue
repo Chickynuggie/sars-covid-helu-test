@@ -96,7 +96,7 @@ div {
 }
 
 .chart {
-  width: 80vw;
+  width: 60vw;
   margin: 0 auto;
   -webkit-box-shadow: 5px 5px 15px -1px #000000;
   box-shadow: 5px 5px 15px -1px #000000;
