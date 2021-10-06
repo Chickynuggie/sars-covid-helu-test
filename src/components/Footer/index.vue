@@ -1,9 +1,9 @@
 <template>
   <div :v-if="globalCovidData" class="footer">
       <div class="global-data-wrapper">
-        <span class="warning">Global Cases: {{ globalCovidData.TotalConfirmed }}</span>
-        <span class="danger">Global Deaths: {{ globalCovidData.TotalDeaths }}</span>
-        <span class="pass">Global Recoveries: {{ globalCovidData.TotalRecovered }}</span>
+        <span class="warning">Total Cases: {{ globalCovidData.TotalConfirmed }}</span>
+        <span class="danger">Total Deaths: {{ globalCovidData.TotalDeaths }}</span>
+        <span class="pass">Total Recoveries: {{ globalCovidData.TotalRecovered }}</span>
       </div>
   </div>
 </template>

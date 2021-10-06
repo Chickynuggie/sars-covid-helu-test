@@ -1,8 +1,10 @@
 <template>
   <div class="header">
+    <div>
       <img src="../../assets/virus.svg">
       <span>SARS-CoV2 chart</span>
-      <CountryInput />
+    </div>
+    <CountryInput />
   </div>
 </template>
 
@@ -23,9 +25,10 @@ export default {
     align-items: center;
     padding-bottom: 10px;
     width: 50vw;
-    margin: 0 auto 10vh;
+    margin: 2vh auto 10vh;
     height: 115px;
     color: white;
+    justify-content: space-between;
 }
 
 img {
