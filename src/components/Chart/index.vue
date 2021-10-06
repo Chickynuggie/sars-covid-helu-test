@@ -39,19 +39,28 @@ export default defineComponent({
   setup() {
     const store = useStore();
     const currentView = computed(() => store.getters.getCurrentView);
+    const countries = store.getters.getCountryNames;
+    const cases = store.getters.getCountriesCovidData.map((country) => country.TotalConfirmed);
+    const deaths = store.getters.getCountriesCovidData.map((country) => country.TotalDeaths);
     const option = ref({
       xAxis: {
         type: "category",
-        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        data: countries,
       },
       yAxis: {
         type: "value",
       },
       series: [
         {
-          data: [120, 200, 150, 80, 70, 110, 130],
+          data: cases,
+          name: "Cases",
           type: "bar"
         },
+        {
+          data: deaths,
+          name: "Deaths",
+          type: "bar"
+        }
       ],
     });
 
@@ -78,7 +87,7 @@ div {
 }
 
 .chart {
-  width: 50vw;
+  width: 80vw;
   margin: 0 auto;
   -webkit-box-shadow: 5px 5px 15px -1px #000000;
   box-shadow: 5px 5px 15px -1px #000000;
