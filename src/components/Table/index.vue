@@ -1,4 +1,5 @@
 <template>
+  <CountryInput />
   <div class="covid-table">
     <table v-if="countriesData">
       <tr>
@@ -17,10 +18,14 @@
 import { useStore } from 'vuex';
 import { onMounted, computed } from 'vue';
 import constants from '../../constants';
+import CountryInput from '../CountryInput';
 
 export default {
   name: 'Table',
   props: ['header'],
+  components: {
+    CountryInput
+  },
   setup() {
     const store = useStore();
     const tableHeaders = constants.tableHeaders;

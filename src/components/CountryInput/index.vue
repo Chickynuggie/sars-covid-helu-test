@@ -66,9 +66,10 @@ h4 {
 }
 
 .country-input-wrapper {
-  width: 25rem;
+  width: 50vw;
+  margin: 0 auto 4vh;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
@@ -76,6 +77,7 @@ h4 {
   cursor: pointer;
   font-size: 1.5rem;
   transition: color 0.1s ease-in-out;
+  margin-left: 1.5rem;
 }
 
 .country-input-clear:hover {

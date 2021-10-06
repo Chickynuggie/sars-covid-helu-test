@@ -4,17 +4,17 @@
       <img src="../../assets/virus.svg">
       <span>SARS-CoV2 chart</span>
     </div>
-    <CountryInput />
+    <ViewSwitcher />
   </div>
 </template>
 
 <script>
-import CountryInput from './CountryInput';
+import ViewSwitcher from './ViewSwitcher';
 
 export default {
   name: 'Header',
   components: {
-      CountryInput
+      ViewSwitcher
   }
 }
 </script>
@@ -25,7 +25,7 @@ export default {
     align-items: center;
     padding-bottom: 10px;
     width: 50vw;
-    margin: 2vh auto 10vh;
+    margin: 2vh auto;
     height: 115px;
     color: white;
     justify-content: space-between;

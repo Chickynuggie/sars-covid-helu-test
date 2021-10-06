@@ -16,6 +16,9 @@ const mutations = {
     },
     stopSpinning(state) {
         state.isSpinning = false;
+    },
+    switchView(state, data) {
+        state.currentView = data;
     }
 };
 

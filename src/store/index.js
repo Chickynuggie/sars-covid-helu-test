@@ -10,7 +10,8 @@ const store = new createStore({
     countryNames: [],
     filterByCountry: null,
     isSpinning: false,
-    countryFilter: ''
+    countryFilter: '',
+    currentView: 'table'
   },
   mutations,
   actions,
