@@ -1,5 +1,5 @@
 <template>
-  <div :class="{hidden: currentView !== 'chart'}">
+  <div :class="{ hidden: currentView !== 'chart' }">
     <p class="chart-title">Global data chart</p>
     <v-chart class="chart" :option="option" autoresize />
   </div>
@@ -40,9 +40,19 @@ export default defineComponent({
     const store = useStore();
     const currentView = computed(() => store.getters.getCurrentView);
     const countries = store.getters.getCountryNames;
-    const cases = store.getters.getCountriesCovidData.map((country) => country.TotalConfirmed);
-    const deaths = store.getters.getCountriesCovidData.map((country) => country.TotalDeaths);
+    const cases = store.getters.getCountriesCovidData.map(
+      (country) => country.TotalConfirmed
+    );
+    const deaths = store.getters.getCountriesCovidData.map(
+      (country) => country.TotalDeaths
+    );
     const option = ref({
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          type: "shadow",
+        },
+      },
       xAxis: {
         type: "category",
         data: countries,
@@ -54,26 +64,25 @@ export default defineComponent({
         {
           data: cases,
           name: "Cases",
-          type: "bar"
+          type: "bar",
         },
         {
           data: deaths,
           name: "Deaths",
-          type: "bar"
-        }
+          type: "bar",
+        },
       ],
     });
 
     return {
       option,
-      currentView
-      };
+      currentView,
+    };
   },
 });
 </script>
 
 <style scoped>
-
 div,
 .chart {
   height: 60vh;
