@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ViewSwitcher from './ViewSwitcher';
+import ViewSwitcher from '../ViewSwitcher';
 
 export default {
   name: 'Header',
