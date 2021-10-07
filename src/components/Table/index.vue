@@ -8,7 +8,7 @@
         </tr>
         <tr v-for="countryData in countriesData" :key="countryData.CountryName">
           <td v-for="key in tableHeaders" :key="countryData.CountryName + key">
-            {{ countryData ? countryData[key] : null}}
+            {{ countryData ? countryData[key] : null }}
           </td>
         </tr>
       </table>
@@ -17,39 +17,38 @@
 </template>
 
 <script>
-import { useStore } from 'vuex';
-import { onMounted, computed } from 'vue';
-import constants from '../../constants';
-import CountryInput from '../CountryInput';
+import { useStore } from "vuex";
+import { onMounted, computed } from "vue";
+import constants from "../../constants";
+import CountryInput from "../CountryInput";
 
 export default {
-  name: 'Table',
-  props: ['header'],
+  name: "Table",
+  props: ["header"],
   components: {
-    CountryInput
+    CountryInput,
   },
   setup() {
     const store = useStore();
     const tableHeaders = constants.tableHeaders;
     const countriesData = computed(() => store.getters.getCountriesCovidData);
-    const currentView = computed(() => store.getters.getCurrentView)
+    const currentView = computed(() => store.getters.getCurrentView);
     let key, countryData;
 
     onMounted(() => {
-      store.dispatch('fetchOverallCovidData');
-    })
+      store.dispatch("fetchOverallCovidData");
+    });
 
     return {
       tableHeaders,
       countriesData,
       currentView,
       key,
-      countryData
-    }
-  }
-}
+      countryData,
+    };
+  },
+};
 </script>
-
 
 <style scoped>
 .covid-table {
@@ -62,7 +61,8 @@ export default {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-th, td {
+th,
+td {
   width: 25%;
   min-width: 25%;
   padding: 5px 10px;

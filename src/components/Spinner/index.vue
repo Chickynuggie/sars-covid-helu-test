@@ -8,7 +8,7 @@
 
 <script>
 import { computed } from "vue";
-import { useStore } from 'vuex';
+import { useStore } from "vuex";
 
 export default {
   name: "Spinner",
@@ -18,21 +18,21 @@ export default {
     const isSpinning = computed(() => store.getters.isSpinning);
 
     return {
-      isSpinning
-    }
+      isSpinning,
+    };
   },
 };
 </script>
 
 <style scoped>
-  .overlay {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    pointer-events: none;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

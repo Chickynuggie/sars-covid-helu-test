@@ -9,5 +9,3 @@ createApp(App)
   .use(store)
   .use(naive)
   .mount("#app");
-
-

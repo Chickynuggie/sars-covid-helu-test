@@ -3,9 +3,9 @@ import { fetchOverallCovidData } from "../api";
 const actions = {
   fetchOverallCovidData({ commit }) {
     fetchOverallCovidData().then((results) => {
-        commit("setGlobalCovidData", results?.data?.Global);
-        commit("setCountriesCovidData", results?.data?.Countries);
-      });
+      commit("setGlobalCovidData", results?.data?.Global);
+      commit("setCountriesCovidData", results?.data?.Countries);
+    });
   },
   fetchGlobalCovidData({ commit }) {
     fetchOverallCovidData().then((results) => {
@@ -18,8 +18,8 @@ const actions = {
     });
   },
   setCountryFilter({ commit }, payload) {
-    commit('setCountryFilter', payload);
-  }
+    commit("setCountryFilter", payload);
+  },
 };
 
 export default actions;

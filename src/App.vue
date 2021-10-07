@@ -11,16 +11,16 @@
 </template>
 
 <script>
-import Table from './components/Table'
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Spinner from './components/Spinner';
-import Duck from './components/Duck';
-import Chart from './components/Chart';
-import Construction from './components/Construction';
+import Table from "./components/Table";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Spinner from "./components/Spinner";
+import Duck from "./components/Duck";
+import Chart from "./components/Chart";
+import Construction from "./components/Construction";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Table,
     Header,
@@ -28,9 +28,9 @@ export default {
     Spinner,
     Duck,
     Chart,
-    Construction
-  }
-}
+    Construction,
+  },
+};
 </script>
 
 <style>

@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  background: url('../assets/kurzgesagt.png');
+  background: url("../assets/kurzgesagt.png");
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;

@@ -1,32 +1,38 @@
 <template>
   <div :v-if="globalCovidData" class="footer">
-      <div class="global-data-wrapper">
-        <span class="warning">Total Cases: {{ globalCovidData.TotalConfirmed }}</span>
-        <span class="danger">Total Deaths: {{ globalCovidData.TotalDeaths }}</span>
-        <span class="pass">Total Recoveries: {{ globalCovidData.TotalRecovered }}</span>
-      </div>
+    <div class="global-data-wrapper">
+      <span class="warning"
+        >Total Cases: {{ globalCovidData.TotalConfirmed }}</span
+      >
+      <span class="danger"
+        >Total Deaths: {{ globalCovidData.TotalDeaths }}</span
+      >
+      <span class="pass"
+        >Total Recoveries: {{ globalCovidData.TotalRecovered }}</span
+      >
+    </div>
   </div>
 </template>
 
 <script>
-import { onMounted, computed } from 'vue';
-import { useStore } from 'vuex';
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 
 export default {
-  name: 'Footer',
+  name: "Footer",
   setup() {
     const store = useStore();
     const globalCovidData = computed(() => store.getters.getGlobalCovidData);
 
     onMounted(() => {
-      store.dispatch('fetchGlobalCovidData');
+      store.dispatch("fetchGlobalCovidData");
     });
 
     return {
-      globalCovidData
-    }
-  }
-}
+      globalCovidData,
+    };
+  },
+};
 </script>
 
 <style scoped>

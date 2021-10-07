@@ -1,13 +1,13 @@
 import axios from "axios";
-import store from '../store';
+import store from "../store";
 
 export const fetchOverallCovidData = () => {
-    return axios.get('https://api.covid19api.com/summary');
+  return axios.get("https://api.covid19api.com/summary");
 };
 
 export const fetchCountries = () => {
-    return axios.get('https://api.covid19api.com/countries');
-}
+  return axios.get("https://api.covid19api.com/countries");
+};
 
 axios.interceptors.request.use(
   function(config) {

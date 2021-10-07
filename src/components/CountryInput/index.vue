@@ -7,7 +7,10 @@
       :on-blur="handleChange"
       placeholder="Start typing country name"
     />
-    <i class="bi bi-x-circle country-input-clear" @click="clearCountryFilter"></i>
+    <i
+      class="bi bi-x-circle country-input-clear"
+      @click="clearCountryFilter"
+    ></i>
   </div>
 </template>
 
@@ -22,17 +25,18 @@ export default {
     const store = useStore();
     const options = computed(() =>
       store.getters.getCountryNames?.filter(
-        (item) => item.toLowerCase().search(selectedCountry.value?.toLowerCase()) !== -1
+        (item) =>
+          item.toLowerCase().search(selectedCountry.value?.toLowerCase()) !== -1
       )
     );
 
     const clearCountryFilter = () => {
-      if(selectedCountry.value) {
+      if (selectedCountry.value) {
         selectedCountry.value = "";
       }
 
       store.commit("clearCountryFilter");
-    }
+    };
 
     const handleChange = () =>
       selectedCountry.value
@@ -43,7 +47,7 @@ export default {
       selectedCountry,
       options,
       handleChange,
-      clearCountryFilter
+      clearCountryFilter,
     };
   },
 };

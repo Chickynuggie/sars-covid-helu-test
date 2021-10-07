@@ -10,12 +10,12 @@ const store = new createStore({
     countryNames: [],
     filterByCountry: null,
     isSpinning: false,
-    countryFilter: '',
-    currentView: 'table'
+    countryFilter: "",
+    currentView: "table",
   },
   mutations,
   actions,
-  getters
+  getters,
 });
 
 export default store;

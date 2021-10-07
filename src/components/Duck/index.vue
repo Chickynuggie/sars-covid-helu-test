@@ -4,25 +4,27 @@
 
 <script>
 export default {
-  name: 'Duck',
+  name: "Duck",
   setup() {
     const handleClick = () => {
-      window.open('https://www.youtube.com/watch?v=BtN-goy9VOY', '_blank').focus();
-    }
+      window
+        .open("https://www.youtube.com/watch?v=BtN-goy9VOY", "_blank")
+        .focus();
+    };
 
     return {
-      handleClick
-    }
-  }
-}
+      handleClick,
+    };
+  },
+};
 </script>
 
 <style scoped>
-  img {
-    position: absolute;
-    left: -10px;
-    bottom: -10px;
-    width: 250px;
-    height: 250px;
-  }
+img {
+  position: absolute;
+  left: -10px;
+  bottom: -10px;
+  width: 250px;
+  height: 250px;
+}
 </style>
